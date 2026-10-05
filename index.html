@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Vebhav Sharma | Backend Architect &amp; AI Engineer</title>
+  
+  <!-- Fonts: Inter, JetBrains Mono & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Executive Stylesheet -->
+  <link rel="stylesheet" href="./style.css"/>
+
+  <!-- Tailwind CSS Core -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: "#38bdf8",
+              indigo: "#818cf8",
+              purple: "#c084fc",
+              emerald: "#34d399",
+              dark: "#06080d",
+              surface: "#0b0f19"
+            }
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="selection:bg-sky-500/30 selection:text-white">
+
+  <!-- 3D Full-Bleed Video Background Canvas (100% Unblurred, 1080p Resolution) -->
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- Page Structure -->
+  <div class="relative z-10">
+
+    <!-- ================= FIXED TOP NAVIGATION ================= -->
+    <header class="fixed top-0 left-0 w-full z-50 exec-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 w-full">
+        <!-- Logo -->
+        <a class="font-mono text-sm tracking-wider font-bold text-white flex items-center gap-2.5 active:scale-95 transition-transform" href="#">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block shadow-[0_0_8px_#34d399]"></span>
+          <span>VS // ARCHITECT</span>
+        </a>
+
+        <!-- Nav Links -->
+        <nav class="hidden md:flex items-center gap-7 font-mono text-xs text-slate-300">
+          <a class="hover:text-brand-cyan transition-colors" href="#about">About</a>
+          <a class="hover:text-brand-cyan transition-colors" href="#skills">Skills</a>
+          <a class="hover:text-brand-cyan transition-colors" href="#projects">Projects</a>
+          <a class="hover:text-brand-cyan transition-colors" href="#experience">Experience</a>
+          <a class="hover:text-brand-cyan transition-colors" href="#certifications">Credentials</a>
+          <a class="hover:text-brand-cyan transition-colors" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3">
+          <button class="status-pill text-xs hover:text-white hover:border-slate-500 transition-colors" onclick="toggleTerminalModal()" title="Open Interactive Terminal">
+            <span class="material-symbols-outlined text-[15px] text-brand-cyan" data-icon="terminal">terminal</span>
+            <span>sh_exec</span>
+          </button>
+          <a class="btn-solid-white !py-1.5 !px-3.5 text-xs" href="mailto:vebhavsharma2006@gmail.com?subject=Resume%20Request%20-%20Vebhav%20Sharma">
+            Resume
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="min-h-screen">
+      
+      <!-- ================= HERO SECTION (Cinematic Asymmetric Spotlight) ================= -->
+      <section class="min-h-screen pt-28 pb-16 flex flex-col justify-center relative" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Left Side: Editorial Typography & Quick Actions (Leaves center/right open for 3D Video) -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- Telemetry Status Pill (Live Supabase Latency Connected) -->
+              <div class="status-pill">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-emerald-400 font-semibold">SYS_ONLINE</span>
+                <span class="text-white/20">•</span>
+                <span class="text-slate-300">GREATER NOIDA, IN</span>
+                <span class="text-white/20">•</span>
+                <span id="hero-latency-display" class="text-brand-cyan font-semibold">SUPABASE: CONNECTED</span>
+              </div>
+
+              <!-- Main Title -->
+              <div class="space-y-2">
+                <h1 class="text-display text-white">
+                  Vebhav Sharma
+                </h1>
+                <p class="text-xl sm:text-2xl font-semibold text-brand-cyan tracking-tight flex items-center gap-2">
+                  <span>Backend Architect</span>
+                  <span class="text-white/20 font-light">/</span>
+                  <span class="text-brand-indigo">AI Engineer</span>
+                </p>
+              </div>
+
+              <!-- Refined Bio -->
+              <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                Computer Science undergraduate specializing in Artificial Intelligence. Focused on engineering high-throughput, low-latency backends with <span class="text-white font-semibold">FastAPI</span>, <span class="text-white font-semibold">Django</span>, and <span class="text-white font-semibold">PostgreSQL</span>. Experienced in local LLMs, streaming STT voice pipelines, and production OCR automation. Solved <span class="text-white font-semibold">330+ LeetCode</span> problems.
+              </p>
+
+              <!-- Meta Strip -->
+              <div class="flex flex-wrap gap-2.5 pt-1 text-xs font-mono text-slate-400">
+                <a href="tel:+917037627734" class="status-pill hover:text-white hover:border-slate-500 transition-colors">
+                  <span class="material-symbols-outlined text-sm text-brand-cyan">call</span>
+                  +91-7037627734
+                </a>
+                <a href="mailto:vebhavsharma2006@gmail.com" class="status-pill hover:text-white hover:border-slate-500 transition-colors">
+                  <span class="material-symbols-outlined text-sm text-brand-cyan">mail</span>
+                  vebhavsharma2006@gmail.com
+                </a>
+                <span class="status-pill text-slate-400">
+                  <span class="material-symbols-outlined text-sm text-brand-indigo">location_on</span>
+                  Greater Noida, UP
+                </span>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="pt-3 flex flex-wrap items-center gap-3.5">
+                <a href="#projects" class="btn-solid-white">
+                  <span class="material-symbols-outlined text-base">code_blocks</span>
+                  View Projects
+                </a>
+                <a href="#contact" class="btn-outline-dark">
+                  <span class="material-symbols-outlined text-base text-brand-cyan">send</span>
+                  Contact Me
+                </a>
+                <a href="mailto:vebhavsharma2006@gmail.com?subject=Resume%20Request%20-%20Vebhav%20Sharma" class="status-pill !py-2.5 !px-4 hover:text-white hover:border-slate-400 transition-colors">
+                  <span class="material-symbols-outlined text-base">download</span>
+                  Download Resume
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Side: Compact Telemetry Panel (Doesn't block center video) -->
+            <div class="lg:col-span-5 flex flex-col items-end">
+              <div class="w-full max-w-md exec-card p-6 space-y-5">
+                <div class="flex items-center justify-between pb-3 border-b exec-divider">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-cyan"></span>
+                    <span class="font-mono text-xs text-white tracking-wider font-semibold">CORE BENCHMARKS</span>
+                  </div>
+                  <span class="font-mono text-xs text-slate-400">v2026.1</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3.5">
+                  <div class="p-3.5 exec-card-subtle">
+                    <div class="font-mono text-xs text-brand-cyan font-semibold">ALGORITHMS</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">330+</div>
+                    <div class="text-xs text-slate-400 mt-0.5">LeetCode Solved</div>
+                  </div>
+                  <div class="p-3.5 exec-card-subtle">
+                    <div class="font-mono text-xs text-brand-indigo font-semibold">ACADEMICS</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">9.37</div>
+                    <div class="text-xs text-slate-400 mt-0.5">CGPA (B.Tech AI)</div>
+                  </div>
+                  <div class="p-3.5 exec-card-subtle">
+                    <div class="font-mono text-xs text-brand-purple font-semibold">RECOGNITION</div>
+                    <div class="text-xl font-bold text-white mt-1">Top 4,000</div>
+                    <div class="text-xs text-slate-400 mt-0.5">AI Summit Finalist</div>
+                  </div>
+                  <div class="p-3.5 exec-card-subtle">
+                    <div class="font-mono text-xs text-brand-emerald font-semibold">INDUSTRY</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">2+</div>
+                    <div class="text-xs text-slate-400 mt-0.5">AI Internships</div>
+                  </div>
+                </div>
+
+                <!-- Social Tray -->
+                <div class="pt-2 flex items-center justify-around font-mono text-xs border-t exec-divider">
+                  <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors flex items-center gap-1">
+                    LinkedIn <span class="material-symbols-outlined text-[13px]">north_east</span>
+                  </a>
+                  <span class="text-white/10">|</span>
+                  <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors flex items-center gap-1">
+                    GitHub <span class="material-symbols-outlined text-[13px]">north_east</span>
+                  </a>
+                  <span class="text-white/10">|</span>
+                  <a href="https://codolio.com" target="_blank" class="text-slate-400 hover:text-brand-cyan transition-colors flex items-center gap-1">
+                    Codolio <span class="material-symbols-outlined text-[13px]">north_east</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TECHNICAL SKILLS MATRIX ================= -->
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" id="skills">
+        <div class="flex items-center justify-between border-b exec-divider pb-4">
+          <div>
+            <span class="section-label">CAPABILITY RADAR</span>
+            <h2 class="text-title text-white mt-1">Technical Skills Matrix</h2>
+          </div>
+          <div class="hidden sm:flex items-center gap-2 font-mono text-xs text-slate-400 status-pill">
+            <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
+            <span>SYSTEM_SPEC_READY</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Programming Languages -->
+          <div class="exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-cyan font-bold">Programming Languages</span>
+              <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="code">code</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag-accent">Python</span>
+              <span class="tech-tag">C</span>
+            </div>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-cyan font-bold">Backend Development</span>
+              <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="dns">dns</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag-accent">FastAPI</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">REST APIs</span>
+              <span class="tech-tag">WebSockets</span>
+            </div>
+          </div>
+
+          <!-- Databases & Storage -->
+          <div class="exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-indigo font-bold">Databases &amp; Storage</span>
+              <span class="material-symbols-outlined text-brand-indigo text-xl" data-icon="database">database</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag-accent">PostgreSQL</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag-accent">Supabase</span>
+            </div>
+          </div>
+
+          <!-- AI / Machine Learning (Core Specialty) -->
+          <div class="lg:col-span-2 exec-card p-6 border-purple-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-sm text-brand-purple font-bold">AI / Machine Learning Stack</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">CORE SPECIALTY</span>
+              </div>
+              <span class="material-symbols-outlined text-brand-purple text-xl" data-icon="neurology">neurology</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Deep Learning</span>
+              <span class="tech-tag-accent">RAG</span>
+              <span class="tech-tag">Hugging Face</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">OCR Pipelines</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+          </div>
+
+          <!-- Web Technologies -->
+          <div class="exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-cyan font-bold">Web Technologies</span>
+              <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="devices">devices</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+          </div>
+
+          <!-- Deployment & Tools -->
+          <div class="exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-cyan font-bold">Deployment &amp; Tools</span>
+              <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="deployed_code">deployed_code</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag-accent">Docker</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">GitHub</span>
+              <span class="tech-tag">Render</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
+          </div>
+
+          <!-- CS Fundamentals -->
+          <div class="lg:col-span-2 exec-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-sm text-brand-cyan font-bold">CS Fundamentals</span>
+              <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="schema">schema</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag-accent">Data Structures &amp; Algorithms</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">DBMS</span>
+              <span class="tech-tag">Operating Systems</span>
+              <span class="tech-tag">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURED PROJECTS ================= -->
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" id="projects">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b exec-divider pb-4 gap-4">
+          <div>
+            <span class="section-label">PRODUCTION SYSTEMS &amp; EXPERIMENTS</span>
+            <h2 class="text-title text-white mt-1">Featured Projects</h2>
+          </div>
+          <p class="font-mono text-xs text-slate-400 max-w-md">
+            Architected for concurrency, sub-second inference, and robust local-first execution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Project 1: Nova OS -->
+          <article class="exec-card overflow-hidden flex flex-col justify-between">
+            <!-- Terminal Header -->
+            <div class="px-5 py-3 border-b exec-divider flex items-center justify-between bg-black/40">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/90 inline-block"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400">~/projects/nova-os-bridge</span>
+              </div>
+              <span class="font-mono text-xs text-brand-cyan font-semibold">Sep–Oct 2026</span>
+            </div>
+
+            <div class="p-6 space-y-5">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-sky-500/20 text-sky-300 border border-sky-500/40 font-bold">VOICE AI &amp; BACKEND</span>
+                  <span class="font-mono text-xs text-slate-400">ROLE: Backend &amp; AI Developer</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">
+                  Nova OS (Gori OS) – Voice-Enabled Windows AI Bridge
+                </h3>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag-accent">FastAPI</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag text-indigo-300">Groq</span>
+                <span class="tech-tag">AssemblyAI</span>
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag text-slate-400">Render</span>
+                <span class="tech-tag text-slate-400">Vercel</span>
+              </div>
+
+              <!-- Highlights -->
+              <ul class="space-y-2.5 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-cyan text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Engineered a <strong>FastAPI bridge server</strong> with a browser-based desktop of 6 apps, operated remotely from a Flutter client via HTTP and WebSocket.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-cyan text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Designed a <strong>Groq-powered voice pipeline</strong> mapping spoken commands to a 38-endpoint task registry via an 11-step validation flow.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-cyan text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Integrated <strong>AssemblyAI streaming STT</strong> with single-use 60-second tokens and spoken-filename normalization.</span>
+                </li>
+              </ul>
+
+              <!-- Architecture Specs Block -->
+              <div class="exec-card-subtle p-3.5 font-mono text-xs grid grid-cols-2 gap-2 text-slate-400">
+                <div><span class="text-white font-semibold">Registry:</span> 38 Endpoints</div>
+                <div><span class="text-white font-semibold">Flow:</span> 11-Step Pre-flight</div>
+                <div><span class="text-white font-semibold">STT Token:</span> 60s Ephemeral</div>
+                <div><span class="text-white font-semibold">Security:</span> PIN + Bearer JWT</div>
+              </div>
+            </div>
+
+            <!-- Footer Action Links -->
+            <div class="p-4 border-t exec-divider flex items-center justify-between bg-black/40">
+              <a class="font-mono text-xs text-brand-cyan hover:text-white flex items-center gap-1.5 transition-colors font-bold" href="https://github.com" target="_blank">
+                <span class="material-symbols-outlined text-base" data-icon="code">code</span>
+                GitHub Code
+              </a>
+              <button class="font-mono text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors" onclick="toggleTerminalModal('nova')">
+                <span class="material-symbols-outlined text-base" data-icon="schema">schema</span>
+                Inspect Architecture
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2: Bhojanam -->
+          <article class="exec-card overflow-hidden flex flex-col justify-between">
+            <!-- Terminal Header -->
+            <div class="px-5 py-3 border-b exec-divider flex items-center justify-between bg-black/40">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/90 inline-block"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400">~/projects/bhojanam-ai</span>
+              </div>
+              <span class="font-mono text-xs text-brand-purple font-semibold">Nov–Dec 2025</span>
+            </div>
+
+            <div class="p-6 space-y-5">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40 font-bold">LOCAL AI &amp; CV</span>
+                  <span class="font-mono text-xs text-slate-400">ROLE: Backend &amp; Local LLM</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">
+                  Bhojanam – Offline AI Food Label Copilot
+                </h3>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag-accent">PySide6 (Qt)</span>
+                <span class="tech-tag text-sky-400">EasyOCR</span>
+                <span class="tech-tag text-purple-300">Ollama (Local LLM)</span>
+                <span class="tech-tag text-slate-400">Gemma</span>
+                <span class="tech-tag text-slate-400">QThread</span>
+              </div>
+
+              <!-- Highlights -->
+              <ul class="space-y-2.5 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-purple text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Developed an <strong>offline-first desktop app</strong> scanning nutrition labels with zero cloud dependency.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-purple text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Architected a <strong>2-stage OCR + local LLM pipeline</strong> (EasyOCR, Ollama/Gemma) with GPU acceleration and 8-field structured output.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-brand-purple text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+                  <span>Offloaded inference to a background <strong>QThread worker</strong>, guaranteeing smooth UI responsiveness.</span>
+                </li>
+              </ul>
+
+              <!-- Specs Grid -->
+              <div class="exec-card-subtle p-3.5 font-mono text-xs grid grid-cols-2 gap-2 text-slate-400">
+                <div><span class="text-white font-semibold">Inputs:</span> Camera / Screen / File</div>
+                <div><span class="text-white font-semibold">Inference:</span> 100% Local (Ollama)</div>
+                <div><span class="text-white font-semibold">Threading:</span> Async QThread</div>
+                <div><span class="text-white font-semibold">Prompt:</span> 8-Field Structured</div>
+              </div>
+            </div>
+
+            <!-- Footer Action Links -->
+            <div class="p-4 border-t exec-divider flex items-center justify-between bg-black/40">
+              <a class="font-mono text-xs text-brand-purple hover:text-white flex items-center gap-1.5 transition-colors font-bold" href="https://github.com" target="_blank">
+                <span class="material-symbols-outlined text-base" data-icon="code">code</span>
+                GitHub
+              </a>
+              <a class="font-mono text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors" href="#">
+                <span class="material-symbols-outlined text-base" data-icon="download">download</span>
+                Download App
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" id="experience">
+        <div class="flex items-center justify-between border-b exec-divider pb-4">
+          <div>
+            <span class="section-label">WORK LOG &amp; IMPACT</span>
+            <h2 class="text-title text-white mt-1">Professional Experience</h2>
+          </div>
+          <span class="font-mono text-xs text-slate-400 status-pill hidden sm:inline">PROD_TRACE: 2 INTERNSHIPS</span>
+        </div>
+
+        <div class="relative border-l border-white/10 ml-4 sm:ml-8 space-y-10">
+          <!-- Experience 1 -->
+          <div class="relative pl-6 sm:pl-10">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-cyan border-4 border-[#06080d]"></span>
+            <div class="exec-card p-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b exec-divider pb-3">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Artificial Intelligence Intern</h3>
+                  <span class="font-mono text-xs text-brand-cyan font-semibold">InAmigos Foundation</span>
+                </div>
+                <div class="status-pill text-xs">
+                  <span class="material-symbols-outlined text-xs text-brand-cyan" data-icon="calendar_month">calendar_month</span>
+                  Aug 2026
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 my-4 font-mono text-xs">
+                <span class="tech-tag text-purple-300">Prompt Engineering</span>
+                <span class="tech-tag">Google Gemini</span>
+                <span class="tech-tag">OpenAI ChatGPT</span>
+                <span class="tech-tag">Anthropic Claude</span>
+              </div>
+
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">•</span>
+                  <span>Crafted and refined 50+ prompts across 3 large language models (Gemini, ChatGPT, Claude) to compare outputs and identify optimal response patterns.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">•</span>
+                  <span>Applied structured prompting methods (few-shot examples, chain-of-thought) cutting iteration cycles by 30% while raising output quality.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="relative pl-6 sm:pl-10">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-indigo border-4 border-[#06080d]"></span>
+            <div class="exec-card p-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b exec-divider pb-3">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Artificial Intelligence &amp; Machine Learning Intern</h3>
+                  <span class="font-mono text-xs text-brand-indigo font-semibold">Sumerix Global</span>
+                </div>
+                <div class="status-pill text-xs">
+                  <span class="material-symbols-outlined text-xs text-brand-indigo" data-icon="calendar_month">calendar_month</span>
+                  Sep 2026
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 my-4 font-mono text-xs">
+                <span class="tech-tag-accent">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag text-indigo-300 font-semibold">PyTorch</span>
+                <span class="tech-tag">Git/GitHub</span>
+              </div>
+
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-indigo font-bold">•</span>
+                  <span>Cleaned and preprocessed 5+ complex datasets, enabling models to reach 85% predictive accuracy.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-indigo font-bold">•</span>
+                  <span>Trained and evaluated 3+ machine learning models with Scikit-learn and implemented 1 deep learning model in PyTorch.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EDUCATION & ACHIEVEMENTS ================= -->
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" id="certifications">
+        <div class="border-b exec-divider pb-4">
+          <span class="section-label">ACADEMIC &amp; CREDENTIALS</span>
+          <h2 class="text-title text-white mt-1">Education &amp; Achievements</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Academic Background -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="font-mono text-sm text-brand-cyan flex items-center gap-2 font-bold">
+              <span class="material-symbols-outlined text-lg" data-icon="school">school</span>
+              ACADEMIC BACKGROUND
+            </h3>
+            
+            <div class="exec-card p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-lg font-bold text-white">Galgotias University</h4>
+                  <p class="text-sm text-brand-cyan font-medium">B.Tech in Computer Science &amp; Engineering (Artificial Intelligence)</p>
+                  <p class="text-xs font-mono text-slate-400 mt-0.5">Greater Noida, Uttar Pradesh</p>
+                </div>
+                <div class="text-right">
+                  <div class="status-pill font-mono text-xs text-brand-cyan font-bold border-sky-500/30">
+                    CGPA: 9.37
+                  </div>
+                  <div class="text-[10px] font-mono text-slate-500 mt-1">Exp: 2028</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exec-card p-6 space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-lg font-bold text-white">Colonels Brightland Public School</h4>
+                  <p class="text-xs text-slate-400">Agra, Uttar Pradesh</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="p-3.5 exec-card-subtle text-center">
+                  <span class="text-xs text-slate-400 font-mono block">Class XII (CBSE)</span>
+                  <span class="text-2xl font-bold text-white mt-1 block">83%</span>
+                  <span class="text-[10px] text-slate-500 block">2023</span>
+                </div>
+                <div class="p-3.5 exec-card-subtle text-center">
+                  <span class="text-xs text-slate-400 font-mono block">Class X (CBSE)</span>
+                  <span class="text-2xl font-bold text-white mt-1 block">80%</span>
+                  <span class="text-[10px] text-slate-500 block">2021</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Honors -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="font-mono text-sm text-brand-purple flex items-center gap-2 font-bold">
+              <span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+              CERTIFICATIONS &amp; HONORS
+            </h3>
+
+            <div class="exec-card p-6 space-y-3">
+              <span class="font-mono text-xs text-slate-400 block mb-2 font-bold">INDUSTRY CERTIFICATIONS</span>
+              <div class="flex items-center gap-3 p-3 exec-card-subtle">
+                <span class="material-symbols-outlined text-brand-cyan text-xl" data-icon="database">database</span>
+                <div>
+                  <div class="text-sm font-semibold text-white">Mastering MySQL</div>
+                  <div class="text-xs font-mono text-slate-400">Guvi Geek Network</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 exec-card-subtle">
+                <span class="material-symbols-outlined text-brand-indigo text-xl" data-icon="terminal">terminal</span>
+                <div>
+                  <div class="text-sm font-semibold text-white">SQL Database Certification</div>
+                  <div class="text-xs font-mono text-slate-400">Oracle Certified</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 exec-card-subtle">
+                <span class="material-symbols-outlined text-brand-purple text-xl" data-icon="hub">hub</span>
+                <div>
+                  <div class="text-sm font-semibold text-white">Google Development Workshop</div>
+                  <div class="text-xs font-mono text-slate-400">Firebase &amp; MediaPipe Architecture</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exec-card p-6 border-sky-500/30 space-y-3">
+              <span class="font-mono text-xs text-brand-cyan font-bold block mb-1">KEY COMPETITIVE ACHIEVEMENTS</span>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-cyan text-2xl mt-0.5" data-icon="emoji_events">emoji_events</span>
+                  <div>
+                    <h5 class="text-white font-bold text-sm">AI Summit 2026 Finalist</h5>
+                    <p class="text-xs text-slate-400">Ranked top team among 4,000 competing groups nationwide.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-indigo text-2xl mt-0.5" data-icon="psychology">psychology</span>
+                  <div>
+                    <h5 class="text-white font-bold text-sm">330+ LeetCode Problems Solved</h5>
+                    <p class="text-xs text-slate-400">Consistent problem-solving across Trees, Graphs, DP, and System Logic.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT & SUPABASE TERMINAL ================= -->
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6" id="contact">
+        <div class="border-b exec-divider pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span class="section-label">DISPATCH &amp; CONNECTION</span>
+            <h2 class="text-title text-white mt-1">Initiate Contact</h2>
+          </div>
+          <div class="status-pill text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="supabase-status-pill">SUPABASE BACKEND: CONNECTED</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Terminal & Live Dispatch Form (Supabase Connected) -->
+          <div class="lg:col-span-7 exec-card overflow-hidden flex flex-col justify-between">
+            <div class="px-5 py-3 border-b exec-divider flex items-center justify-between bg-black/40">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/90 inline-block"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400">vebhav@arch-station:~$ (geaziypuwsucehkrcjup)</span>
+              </div>
+              <span class="font-mono text-xs text-brand-cyan font-bold">zsh 5.9</span>
+            </div>
+
+            <div class="p-6 font-mono text-xs space-y-4 text-white overflow-x-auto">
+              <div class="space-y-1">
+                <p class="text-slate-500"># Active Supabase backend telemetry</p>
+                <p><span class="text-brand-cyan">$</span> supabase status --project geaziypuwsucehkrcjup</p>
+                <div class="text-slate-300 p-3 bg-black/40 rounded-lg border border-white/5 space-y-1">
+                  <div>Project ID: <span class="text-brand-cyan font-semibold">geaziypuwsucehkrcjup</span></div>
+                  <div>Status: <span class="text-emerald-400 font-semibold">HEALTHY / ONLINE</span></div>
+                  <div id="terminal-ping-latency">Ping Latency: <span class="text-brand-cyan">Measuring...</span></div>
+                </div>
+              </div>
+
+              <!-- Interactive Message Dispatch Form -->
+              <div class="pt-2 space-y-3">
+                <p class="text-slate-400 flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-sm text-brand-cyan">send</span>
+                  <span>Direct Message Payload via Supabase:</span>
+                </p>
+
+                <form id="contact-dispatch-form" class="space-y-3 font-sans text-xs">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label class="block font-mono text-[11px] text-slate-400 mb-1">Your Name</label>
+                      <input id="input-sender-name" type="text" required placeholder="e.g. Sarah Connor" class="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white placeholder-slate-600 focus:outline-none focus:border-brand-cyan font-mono text-xs transition-colors"/>
+                    </div>
+                    <div>
+                      <label class="block font-mono text-[11px] text-slate-400 mb-1">Email Address</label>
+                      <input id="input-sender-email" type="email" required placeholder="sarah@example.com" class="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white placeholder-slate-600 focus:outline-none focus:border-brand-cyan font-mono text-xs transition-colors"/>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block font-mono text-[11px] text-slate-400 mb-1">Message Payload</label>
+                    <textarea id="input-sender-message" required rows="3" placeholder="Discuss a project, high-scale backend architecture, or AI role..." class="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white placeholder-slate-600 focus:outline-none focus:border-brand-cyan font-mono text-xs transition-colors resize-none"></textarea>
+                  </div>
+
+                  <div class="flex items-center justify-between pt-1">
+                    <button id="dispatch-submit-btn" type="submit" class="btn-solid-white !py-2 !px-4 text-xs font-mono font-bold flex items-center gap-2">
+                      <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                      <span>Transmit to Supabase</span>
+                    </button>
+                    <span id="dispatch-status-msg" class="font-mono text-xs text-slate-400"></span>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+            <div class="p-4 border-t exec-divider flex flex-wrap items-center justify-between gap-3 bg-black/40 text-xs font-mono text-slate-400">
+              <span>Ready for connection payload</span>
+              <a class="text-brand-cyan hover:underline flex items-center gap-1" href="mailto:vebhavsharma2006@gmail.com">
+                <span>Direct Mail Protocol: vebhavsharma2006@gmail.com</span>
+                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Channels Card -->
+          <div class="lg:col-span-5 exec-card p-6 flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="text-xl font-bold text-white">Direct Channels</h3>
+              <p class="text-sm text-slate-400 mt-1 font-sans">
+                Reach out for backend system architecture, generative AI consulting, or high-impact technical roles.
+              </p>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <a class="flex items-center justify-between p-3.5 exec-card-subtle hover:border-brand-cyan/40 hover:text-brand-cyan transition-all" href="mailto:vebhavsharma2006@gmail.com">
+                <span class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-brand-cyan text-lg" data-icon="mail">mail</span>
+                  vebhavsharma2006@gmail.com
+                </span>
+                <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+              </a>
+              <a class="flex items-center justify-between p-3.5 exec-card-subtle hover:border-brand-cyan/40 hover:text-brand-cyan transition-all" href="tel:+917037627734">
+                <span class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-brand-cyan text-lg" data-icon="call">call</span>
+                  +91-7037627734
+                </span>
+                <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+              </a>
+              <a class="flex items-center justify-between p-3.5 exec-card-subtle hover:border-brand-indigo/40 hover:text-brand-indigo transition-all" href="https://linkedin.com" target="_blank">
+                <span class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-brand-indigo text-lg" data-icon="public">public</span>
+                  LinkedIn Profile
+                </span>
+                <span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span>
+              </a>
+              <a class="flex items-center justify-between p-3.5 exec-card-subtle hover:border-brand-cyan/40 hover:text-brand-cyan transition-all" href="https://github.com" target="_blank">
+                <span class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-brand-cyan text-lg" data-icon="deployed_code">deployed_code</span>
+                  GitHub Repositories
+                </span>
+                <span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span>
+              </a>
+            </div>
+
+            <div class="pt-2">
+              <span class="status-pill text-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Response SLA: &lt; 12 hours via Email / Telegram
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= TERMINAL MODAL POPUP ================= -->
+    <div class="fixed inset-0 z-50 bg-black/85 hidden items-center justify-center p-4" id="terminal-modal">
+      <div class="exec-card max-w-2xl w-full overflow-hidden shadow-2xl">
+        <div class="px-5 py-3 border-b exec-divider flex items-center justify-between bg-black/50">
+          <span class="font-mono text-xs text-brand-cyan flex items-center gap-2 font-bold">
+            <span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+            ARCH_INSPECT_TERMINAL :: vebhav@arch-station
+          </span>
+          <button class="text-slate-400 hover:text-white font-mono text-xs" onclick="toggleTerminalModal()">
+            [ESC / CLOSE]
+          </button>
+        </div>
+        <div class="p-6 font-mono text-xs space-y-4 max-h-[60vh] overflow-y-auto">
+          <div class="text-slate-500"># Active runtime inspection loaded.</div>
+          <div>
+            <span class="text-brand-cyan">$</span> whoami
+            <p class="text-white mt-1">Vebhav Sharma — Backend Developer | Artificial Intelligence Engineer</p>
+          </div>
+          <div>
+            <span class="text-brand-cyan">$</span> arch --specs
+            <div class="mt-1 p-3.5 exec-card-subtle text-indigo-300">
+              • Primary: FastAPI, Django, PostgreSQL, MySQL<br/>
+              • Cloud DB: Supabase (geaziypuwsucehkrcjup) [Active &amp; Connected]<br/>
+              • AI Engines: PyTorch, Scikit-learn, Ollama (Local LLM), Groq, AssemblyAI<br/>
+              • LeetCode: 330+ solved | CGPA: 9.37 (Galgotias Univ)
+            </div>
+          </div>
+          <div>
+            <span class="text-brand-cyan">$</span> ping -c 1 geaziypuwsucehkrcjup.supabase.co
+            <p id="modal-ping-result" class="text-emerald-400 mt-1">64 bytes from geaziypuwsucehkrcjup.supabase.co: [PINGING...]</p>
+          </div>
+          <div>
+            <span class="text-brand-cyan">$</span> echo "Have a project in mind?"
+            <p class="text-brand-cyan mt-1">"Let's build reliable distributed backends and machine intelligence."</p>
+          </div>
+        </div>
+        <div class="px-5 py-3 border-t exec-divider flex justify-between items-center text-xs font-mono bg-black/50">
+          <span class="text-slate-400">Press ESC or click Done</span>
+          <button class="btn-solid-white !py-1 !px-3.5 text-xs" onclick="toggleTerminalModal()">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= ADMIN CONSOLE MODAL ================= -->
+    <div class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-3 sm:p-6 overflow-y-auto" id="admin-modal">
+      
+      <!-- SUB-VIEW 1: AUTHENTICATION GATE -->
+      <div id="admin-auth-view" class="exec-card max-w-md w-full overflow-hidden shadow-2xl border border-slate-800 bg-[#090d16]">
+        <div class="px-5 py-4 border-b exec-divider flex items-center justify-between bg-black/60">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+            <span class="font-mono text-xs text-white tracking-wider font-bold">ADMIN CONSOLE // GATEWAY</span>
+          </div>
+          <button class="text-slate-400 hover:text-white font-mono text-xs p-1" onclick="toggleAdminModal(false)">
+            ✕
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="text-center pb-2">
+            <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+              <span class="material-symbols-outlined text-2xl">shield_person</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Administrator Access</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Authenticate to view live Supabase contact data</p>
+          </div>
+
+          <!-- Error Alert Banner -->
+          <div id="admin-login-error" class="hidden p-3 rounded-lg bg-rose-500/15 border border-rose-500/40 text-rose-300 text-xs font-mono flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">error</span>
+            <span id="admin-login-error-text">Invalid admin username or password.</span>
+          </div>
+
+          <form id="admin-login-form" class="space-y-3.5">
+            <div>
+              <label class="block font-mono text-[11px] text-slate-400 uppercase tracking-wider mb-1.5 font-semibold">Admin Username</label>
+              <input type="text" id="admin-user-input" class="admin-input" placeholder="Enter username (e.g. Vebhav)" required autocomplete="username" />
+            </div>
+            <div>
+              <label class="block font-mono text-[11px] text-slate-400 uppercase tracking-wider mb-1.5 font-semibold">Password</label>
+              <div class="relative">
+                <input type="password" id="admin-pass-input" class="admin-input pr-10" placeholder="••••••••" required autocomplete="current-password" />
+                <button type="button" id="admin-toggle-pwd-btn" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white" tabindex="-1">
+                  <span class="material-symbols-outlined text-sm" id="admin-pwd-icon">visibility</span>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="w-full btn-solid-white justify-center !py-2.5 mt-2">
+              <span class="material-symbols-outlined text-sm">vpn_key</span>
+              <span>Unlock Console</span>
+            </button>
+          </form>
+
+          <div class="pt-3 border-t exec-divider text-center font-mono text-[11px] text-slate-500">
+            Protected by Session Security • Supabase geaziypuwsucehkrcjup
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-VIEW 2: LIVE TELEMETRY & DATA DASHBOARD -->
+      <div id="admin-dashboard-view" class="hidden exec-card max-w-5xl w-full overflow-hidden shadow-2xl border border-slate-800 bg-[#090d16] flex flex-col max-h-[92vh]">
+        <!-- Top Navigation -->
+        <div class="px-5 py-3.5 border-b exec-divider flex flex-wrap items-center justify-between gap-3 bg-black/60">
+          <div class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="font-mono text-xs text-white tracking-wider font-bold">
+              ADMIN CONSOLE :: SUPABASE LIVE TELEMETRY
+            </span>
+            <span class="admin-badge admin-badge-cyan">Vebhav</span>
+            <span class="admin-badge admin-badge-emerald">CONNECTED</span>
+          </div>
+          <div class="flex items-center gap-2 font-mono text-xs">
+            <button id="admin-refresh-btn" class="btn-outline-dark !py-1 !px-2.5 text-xs flex items-center gap-1.5" title="Refresh Messages">
+              <span class="material-symbols-outlined text-sm" id="admin-refresh-icon">refresh</span>
+              <span class="hidden sm:inline">Refresh</span>
+            </button>
+            <button id="admin-export-btn" class="btn-outline-dark !py-1 !px-2.5 text-xs flex items-center gap-1.5" title="Export as CSV">
+              <span class="material-symbols-outlined text-sm">download</span>
+              <span class="hidden sm:inline">Export CSV</span>
+            </button>
+            <button id="admin-logout-btn" class="btn-outline-dark !py-1 !px-2.5 text-xs text-rose-400 hover:text-rose-300 border-rose-500/30 flex items-center gap-1.5" title="Logout">
+              <span class="material-symbols-outlined text-sm">logout</span>
+              <span class="hidden sm:inline">Logout</span>
+            </button>
+            <button class="text-slate-400 hover:text-white font-mono text-xs p-1.5 ml-1" onclick="toggleAdminModal(false)">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Metrics Ribbon -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 p-4 border-b exec-divider bg-black/30">
+          <div class="p-3 exec-card-subtle">
+            <div class="font-mono text-[10px] text-brand-cyan uppercase font-semibold">Total Messages</div>
+            <div id="admin-stat-total" class="text-2xl font-extrabold text-white mt-0.5">0</div>
+            <div class="text-[11px] text-slate-400 mt-0.5 font-mono">In Supabase DB</div>
+          </div>
+          <div class="p-3 exec-card-subtle">
+            <div class="font-mono text-[10px] text-brand-emerald uppercase font-semibold">Unique Contacts</div>
+            <div id="admin-stat-unique" class="text-2xl font-extrabold text-white mt-0.5">0</div>
+            <div class="text-[11px] text-slate-400 mt-0.5 font-mono">By unique email</div>
+          </div>
+          <div class="p-3 exec-card-subtle">
+            <div class="font-mono text-[10px] text-indigo-400 uppercase font-semibold">Latest Inquiry</div>
+            <div id="admin-stat-latest" class="text-xs font-bold text-white mt-1.5 truncate font-mono">None yet</div>
+            <div class="text-[11px] text-slate-400 mt-0.5 font-mono">Timestamp</div>
+          </div>
+          <div class="p-3 exec-card-subtle">
+            <div class="font-mono text-[10px] text-amber-400 uppercase font-semibold">Database Engine</div>
+            <div class="text-xs font-bold text-white mt-1.5 font-mono truncate">PostgreSQL 15</div>
+            <div class="text-[11px] text-emerald-400 mt-0.5 font-mono flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Online
+            </div>
+          </div>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="px-4 py-2.5 border-b exec-divider flex flex-col sm:flex-row items-center justify-between gap-2.5 bg-black/20">
+          <div class="relative w-full sm:w-80">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+            <input type="text" id="admin-search-input" class="admin-input !py-1.5 !pl-9 text-xs" placeholder="Search by name, email, or message..." />
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+            <span id="admin-count-label" class="font-mono text-xs text-slate-400">Loading messages...</span>
+          </div>
+        </div>
+
+        <!-- Data Body (Scrollable) -->
+        <div class="p-4 overflow-y-auto flex-1 space-y-3 min-h-[300px]" id="admin-data-scroll-area">
+          <!-- Loading State -->
+          <div id="admin-data-loading" class="py-12 flex flex-col items-center justify-center text-slate-400 gap-3">
+            <span class="material-symbols-outlined text-3xl animate-spin text-brand-cyan">progress_activity</span>
+            <span class="font-mono text-xs">Querying Supabase messages table...</span>
+          </div>
+
+          <!-- Error State -->
+          <div id="admin-data-error" class="hidden p-5 exec-card-subtle border border-rose-500/30 text-slate-300 space-y-3">
+            <div class="flex items-center gap-2 text-rose-400 font-mono text-xs font-bold">
+              <span class="material-symbols-outlined text-base">warning</span>
+              <span>Supabase Table Query Notice</span>
+            </div>
+            <p id="admin-error-desc" class="text-xs font-mono text-slate-400"></p>
+            <div class="p-3 bg-black/40 rounded border border-white/10 font-mono text-xs text-indigo-300">
+              Tip: Execute the SQL in <code class="text-brand-cyan">schema.sql</code> in your <a href="https://supabase.com/dashboard/project/geaziypuwsucehkrcjup/sql/new" target="_blank" class="underline text-brand-cyan">Supabase SQL Editor</a> to initialize the <code>messages</code> table.
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div id="admin-data-empty" class="hidden py-12 flex flex-col items-center justify-center text-slate-400 gap-2 text-center">
+            <span class="material-symbols-outlined text-4xl text-slate-600">inbox</span>
+            <span class="font-mono text-xs text-white font-semibold">No messages in database yet</span>
+            <span class="text-xs text-slate-500 max-w-sm">When visitors submit inquiries through the contact dispatcher above, they will stream here in real-time.</span>
+          </div>
+
+          <!-- Messages List -->
+          <div id="admin-messages-container" class="space-y-3"></div>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="px-5 py-2.5 border-t exec-divider flex items-center justify-between text-xs font-mono bg-black/50 text-slate-500">
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[14px] text-brand-cyan">database</span>
+            <span>geaziypuwsucehkrcjup // public.messages</span>
+          </span>
+          <span>Press ESC to close</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full exec-nav border-t exec-divider mt-24">
+      <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <span class="font-mono text-sm text-white font-bold">VS // ARCHITECT</span>
+          <span class="hidden sm:inline text-white/20">•</span>
+          <span class="text-xs text-slate-400">© 2026 Vebhav Sharma. Powered by Supabase Backend &amp; 3D Scrollytelling.</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs">
+          <a class="text-slate-400 hover:text-white transition-colors" href="https://github.com" target="_blank">GitHub</a>
+          <a class="text-slate-400 hover:text-white transition-colors" href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a class="text-slate-400 hover:text-white transition-colors" href="mailto:vebhavsharma2006@gmail.com">Email</a>
+          <a class="text-slate-400 hover:text-white transition-colors" href="#projects">Architecture Notes</a>
+          <a class="text-brand-cyan hover:text-white transition-colors" href="#about">System Status</a>
+
+          <!-- Admin Portal Trigger Button -->
+          <button id="footer-admin-btn" onclick="toggleAdminModal(true)" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-amber-400 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 hover:border-amber-400 hover:text-amber-300 transition-all font-semibold">
+            <span class="material-symbols-outlined text-[15px]">shield_person</span>
+            <span>Admin Portal</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Main JavaScript with 3D Video Scrubbing Engine and Lenis Smooth Scroll -->
+  <script type="module" src="./main.js"></script>
+
+  <!-- Global Micro-interactions Script -->
+  <script>
+    function toggleTerminalModal(context) {
+      const modal = document.getElementById('terminal-modal');
+      if (!modal) return;
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function toggleAdminModal(open) {
+      if (typeof window.handleToggleAdminModal === 'function') {
+        window.handleToggleAdminModal(open);
+      } else {
+        const modal = document.getElementById('admin-modal');
+        if (!modal) return;
+        if (open === undefined) {
+          modal.classList.toggle('hidden');
+          modal.classList.toggle('flex');
+        } else if (open) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const termModal = document.getElementById('terminal-modal');
+        if (termModal && !termModal.classList.contains('hidden')) {
+          termModal.classList.add('hidden');
+          termModal.classList.remove('flex');
+        }
+        const adminModal = document.getElementById('admin-modal');
+        if (adminModal && !adminModal.classList.contains('hidden')) {
+          toggleAdminModal(false);
+        }
+      }
+    });
+
+    window.toggleTerminalModal = toggleTerminalModal;
+    window.toggleAdminModal = toggleAdminModal;
+  </script>
+</body>
+</html>
+

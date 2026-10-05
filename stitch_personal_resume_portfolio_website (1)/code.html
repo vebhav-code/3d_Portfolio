@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vebhav Sharma | Backend Developer &amp; AI Engineer</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#dfe2ee",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353942",
+            "on-tertiary-fixed-variant": "#5516be",
+            "primary-fixed": "#e1e0ff",
+            "outline-variant": "#464554",
+            "secondary-fixed-dim": "#4cd7f6",
+            "on-secondary-fixed": "#001f26",
+            "on-secondary-fixed-variant": "#004e5c",
+            "on-secondary-container": "#00424e",
+            "secondary-container": "#03b5d3",
+            "surface-container-high": "#262a33",
+            "on-error-container": "#ffdad6",
+            "tertiary-container": "#a078ff",
+            "on-background": "#dfe2ee",
+            "on-secondary": "#003640",
+            "surface-container": "#1c2028",
+            "on-primary": "#1000a9",
+            "on-surface-variant": "#c7c4d7",
+            "inverse-on-surface": "#2c3039",
+            "error-container": "#93000a",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "background": "#0f131c",
+            "secondary": "#4cd7f6",
+            "secondary-fixed": "#acedff",
+            "on-primary-container": "#0d0096",
+            "surface-container-low": "#181c24",
+            "tertiary": "#d0bcff",
+            "surface-variant": "#31353e",
+            "primary": "#c0c1ff",
+            "primary-container": "#8083ff",
+            "surface-tint": "#c0c1ff",
+            "surface": "#0f131c",
+            "on-tertiary-container": "#340080",
+            "tertiary-fixed": "#e9ddff",
+            "inverse-surface": "#dfe2ee",
+            "on-primary-fixed": "#07006c",
+            "surface-container-lowest": "#0a0e16",
+            "tertiary-fixed-dim": "#d0bcff",
+            "primary-fixed-dim": "#c0c1ff",
+            "error": "#ffb4ab",
+            "on-tertiary": "#3c0091",
+            "on-tertiary-fixed": "#23005c",
+            "inverse-primary": "#494bd6",
+            "outline": "#908fa0",
+            "surface-container-highest": "#31353e",
+            "on-error": "#690005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["JetBrains Mono"],
+            "display-mobile": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "code-lg": ["JetBrains Mono"],
+            "label-md": ["JetBrains Mono"],
+            "code-sm": ["JetBrains Mono"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "display-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "code-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 24px -4px rgba(76, 215, 246, 0.25);
+    }
+    .glow-indigo {
+      box-shadow: 0 0 24px -4px rgba(192, 193, 255, 0.25);
+    }
+    .glow-violet {
+      box-shadow: 0 0 24px -4px rgba(208, 188, 255, 0.2);
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-secondary/30 selection:text-secondary-fixed">
+<!-- ================= TOP APP BAR (Shared Component) ================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 dark:border-outline-variant/20 shadow-sm dark:shadow-none">
+<div class="max-w-7xl mx-auto px-space-lg flex justify-between items-center h-16 w-full">
+<!-- Brand Logo -->
+<a class="font-label-md text-label-md text-primary dark:text-primary tracking-widest font-bold flex items-center gap-space-sm active:scale-95 transition-transform duration-150" href="#">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse inline-block"></span>
+        VS // ARCHITECT
+      </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-secondary dark:text-secondary font-label-md border-b border-secondary pb-1 transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#skills">Skills</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#experience">Experience</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#projects">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#certifications">Certifications</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<button class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 hover:border-secondary text-secondary font-label-md flex items-center gap-1.5 active:scale-95 transition-all text-xs" onclick="toggleTerminalModal()" title="Open Interactive Terminal">
+<span class="material-symbols-outlined text-[16px]" data-icon="terminal">terminal</span>
+<span class="hidden sm:inline font-code-sm">sh_exec</span>
+</button>
+<a class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-xs font-semibold hover:bg-primary-fixed transition-colors active:scale-95" href="#contact">
+          Resume
+        </a>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 grid-bg min-h-screen">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+<!-- ================= HERO SECTION ================= -->
+<section class="pt-8 sm:pt-14 relative" id="about">
+<div class="relative bg-surface-container-low/70 border border-outline-variant/30 rounded-xl p-6 sm:p-10 backdrop-blur-sm glow-indigo">
+<!-- System Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-outline-variant/20 font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-ping inline-block"></span>
+<span class="text-secondary font-code-sm">SYS_STATUS: ONLINE</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">GREATER NOIDA, UTTAR PRADESH</span>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<span class="text-on-surface-variant">LATENCY: 8ms</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary">AI SUMMIT '26 FINALIST</span>
+</div>
+</div>
+<!-- Hero Details -->
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 space-y-5">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+                BACKEND &amp; MACHINE INTELLIGENCE SPECIALIST
+              </div>
+<h1 class="text-display-mobile md:text-display font-display tracking-tight text-on-surface font-extrabold">
+                Vebhav Sharma
+              </h1>
+<h2 class="text-headline-sm md:text-headline-md font-headline-md text-primary font-semibold flex items-center gap-3">
+<span>Backend Developer</span>
+<span class="text-outline-variant text-base">|</span>
+<span class="text-secondary">Artificial Intelligence Engineer</span>
+</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                Computer Science undergraduate specializing in Artificial Intelligence, focused on backend engineering with 
+                <span class="text-on-surface font-semibold">FastAPI</span>, 
+                <span class="text-on-surface font-semibold">Django</span>, and 
+                <span class="text-on-surface font-semibold">PostgreSQL/MySQL</span>. Skilled in REST API design, voice-driven AI automation, OCR pipelines, and ML model training (Scikit-learn, PyTorch, Local LLMs). Solved 330+ LeetCode problems; comfortable owning API and database layers.
+              </p>
+<!-- Meta / Contact Strip -->
+<div class="pt-2 flex flex-wrap gap-y-2 gap-x-5 text-sm font-code-sm text-on-surface-variant">
+<a class="hover:text-secondary flex items-center gap-1.5 transition-colors" href="tel:+917037627734">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="call">call</span>
+                  +91-7037627734
+                </a>
+<a class="hover:text-secondary flex items-center gap-1.5 transition-colors" href="mailto:vebhavsharma2006@gmail.com">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="mail">mail</span>
+                  vebhavsharma2006@gmail.com
+                </a>
+<span class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-xs text-tertiary" data-icon="location_on">location_on</span>
+                  Greater Noida, Uttar Pradesh
+                </span>
+</div>
+<!-- CTA Row -->
+<div class="pt-4 flex flex-wrap items-center gap-3">
+<a class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-sm font-semibold hover:bg-primary-fixed transition-all active:scale-95 flex items-center gap-2" href="#projects">
+<span class="material-symbols-outlined text-sm" data-icon="code_blocks">code_blocks</span>
+                  View Projects
+                </a>
+<a class="px-5 py-2.5 rounded-lg bg-surface-container border border-outline-variant/40 hover:border-secondary text-on-surface font-label-md text-sm transition-all active:scale-95 flex items-center gap-2" href="#contact">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                  Contact Me
+                </a>
+<a class="px-4 py-2.5 rounded-lg border border-outline-variant/20 hover:border-outline text-on-surface-variant font-label-md text-sm transition-all flex items-center gap-2" href="mailto:vebhavsharma2006@gmail.com?subject=Resume%20Request%20-%20Vebhav%20Sharma">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                  Download Resume
+                </a>
+</div>
+</div>
+<!-- Stats Bento Column -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-3.5 w-full">
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30 glow-cyan">
+<div class="font-label-sm text-label-sm text-secondary">ALGORITHMS</div>
+<div class="mt-2 text-headline-lg font-headline-lg text-on-surface">330+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">LeetCode Solved</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-primary">ACADEMICS</div>
+<div class="mt-2 text-headline-lg font-headline-lg text-on-surface">9.37</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">CGPA (B.Tech AI)</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30 glow-violet">
+<div class="font-label-sm text-label-sm text-tertiary">RECOGNITION</div>
+<div class="mt-2 text-headline-sm font-headline-sm text-on-surface font-bold">Top 4,000</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">AI Summit '26 Finalist</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-secondary">INDUSTRY</div>
+<div class="mt-2 text-headline-lg font-headline-lg text-on-surface">2+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">AI Internships</div>
+</div>
+<!-- Quick Links Tray -->
+<div class="col-span-2 p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/20 flex items-center justify-around font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-1" href="https://linkedin.com" target="_blank">
+<span>LinkedIn</span>
+<span class="material-symbols-outlined text-[13px]" data-icon="north_east">north_east</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-1" href="https://github.com" target="_blank">
+<span>GitHub</span>
+<span class="material-symbols-outlined text-[13px]" data-icon="north_east">north_east</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-1" href="https://codolio.com" target="_blank">
+<span>Codolio</span>
+<span class="material-symbols-outlined text-[13px]" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= TECHNICAL SKILLS MATRIX ================= -->
+<section class="space-y-6" id="skills">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">CAPABILITY RADAR</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">Technical Skills Matrix</h2>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-code-sm text-outline">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>SYSTEM_SPEC_READY</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Programming Languages -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-primary font-bold">Programming Languages</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="code">code</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Java</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-secondary/40 font-label-sm text-label-sm text-secondary">Python</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">C</span>
+</div>
+</div>
+<!-- Backend Development -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-secondary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-secondary font-bold">Backend Development</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="dns">dns</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-secondary/40 font-label-sm text-label-sm text-secondary">FastAPI</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Django</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Node.js</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">REST APIs</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">WebSockets</span>
+</div>
+</div>
+<!-- Databases -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-tertiary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-tertiary font-bold">Databases &amp; Storage</span>
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="database">database</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-primary/40 font-label-sm text-label-sm text-primary">PostgreSQL</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">MySQL</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Firebase</span>
+</div>
+</div>
+<!-- AI / Machine Learning (Full Span on 2 cols or wide) -->
+<div class="lg:col-span-2 bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-tertiary/40 transition-colors glow-violet">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-tertiary font-bold">AI / Machine Learning Stack</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm bg-tertiary-container/30 text-tertiary-fixed border border-tertiary/30">CORE SPECIALTY</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="neurology">neurology</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-tertiary/10 border border-tertiary/40 font-label-sm text-label-sm text-tertiary">Machine Learning</span>
+<span class="px-2.5 py-1 rounded bg-tertiary/10 border border-tertiary/40 font-label-sm text-label-sm text-tertiary">Deep Learning</span>
+<span class="px-2.5 py-1 rounded bg-tertiary/10 border border-secondary/50 font-label-sm text-label-sm text-secondary">RAG</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Hugging Face</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">LangChain</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">LangGraph</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">PyTorch</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Scikit-learn</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">OpenCV</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">OCR Pipelines</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">NLP</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">NumPy</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Pandas</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Matplotlib</span>
+</div>
+</div>
+<!-- Web Technologies -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-primary font-bold">Web Technologies</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="devices">devices</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">React.js</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">JavaScript</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">HTML</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">CSS</span>
+</div>
+</div>
+<!-- Deployment & Tools -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-secondary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-secondary font-bold">Deployment &amp; Tools</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="deployed_code">deployed_code</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-secondary/40 font-label-sm text-label-sm text-secondary">Docker</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Git</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">GitHub</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Render</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Vercel</span>
+</div>
+</div>
+<!-- CS Fundamentals -->
+<div class="lg:col-span-2 bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-primary font-bold">CS Fundamentals</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="schema">schema</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container border border-primary/40 font-label-sm text-label-sm text-primary">Data Structures &amp; Algorithms</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">OOP</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">DBMS</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Operating Systems</span>
+<span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-label-sm text-label-sm text-on-surface">Computer Networks</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FEATURED PROJECTS ================= -->
+<section class="space-y-8" id="projects">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant/20 pb-4 gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">PRODUCTION SYSTEMS &amp; EXPERIMENTS</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">Featured Projects</h2>
+</div>
+<p class="font-code-sm text-xs text-on-surface-variant max-w-md">
+            Architected for concurrency, sub-second inference, and robust local-first execution.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Project 1: Nova OS (Gori OS) -->
+<article class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col justify-between hover:border-secondary/50 transition-all glow-cyan group">
+<!-- Terminal Header -->
+<div class="bg-surface-container-lowest px-4 py-2.5 border-b border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container border border-error/50 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container/40 border border-secondary/50 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-surface-variant inline-block"></span>
+<span class="ml-2 font-code-sm text-xs text-outline">~/projects/nova-os-bridge</span>
+</div>
+<span class="font-code-sm text-xs text-secondary">Sep–Oct 2026</span>
+</div>
+<!-- Card Content -->
+<div class="p-6 space-y-5">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm bg-secondary/10 text-secondary border border-secondary/30">VOICE AI &amp; BACKEND</span>
+<span class="font-label-sm text-label-sm text-outline">ROLE: Backend &amp; AI Developer</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mt-2 group-hover:text-secondary transition-colors">
+                  Nova OS (Gori OS) – Voice-Enabled Windows AI Bridge
+                </h3>
+</div>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-1.5 font-code-sm text-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface border border-outline-variant/30">Python</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary border border-secondary/30">FastAPI</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface border border-outline-variant/30">WebSockets</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary border border-tertiary/30">Groq</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface border border-outline-variant/30">AssemblyAI</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface border border-outline-variant/30">Flutter</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline border border-outline-variant/30">Render</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline border border-outline-variant/30">Vercel</span>
+</div>
+<!-- Highlights -->
+<ul class="space-y-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Engineered a <strong>FastAPI bridge server</strong> with a browser-based desktop of 6 apps, operated remotely from a Flutter Android client over HTTP and WebSocket.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Designed a <strong>Groq-powered voice pipeline</strong> mapping spoken commands to a 38-endpoint task registry (5 categories) via an 11-step flow with pre-flight validation, blocking invented endpoints.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Integrated <strong>AssemblyAI streaming STT</strong> with single-use 60-second tokens and spoken-filename normalization.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Secured access with <strong>6-digit PIN pairing</strong> (5-min expiry) and bearer-token auth; shipped to Vercel/Render with auto environment detection and unit tests.</span>
+</li>
+</ul>
+<!-- Architecture Specs Block -->
+<div class="bg-surface-container-lowest p-3.5 rounded border border-outline-variant/20 font-code-sm text-xs grid grid-cols-2 gap-2 text-outline">
+<div><span class="text-on-surface-variant font-semibold">Registry:</span> 38 Endpoints (5 Cat)</div>
+<div><span class="text-on-surface-variant font-semibold">Flow:</span> 11-Step Pre-flight Check</div>
+<div><span class="text-on-surface-variant font-semibold">STT Token:</span> 60s Ephemeral</div>
+<div><span class="text-on-surface-variant font-semibold">Security:</span> PIN + Bearer JWT</div>
+</div>
+</div>
+<!-- Footer Action Links -->
+<div class="p-4 bg-surface-container border-t border-outline-variant/20 flex items-center justify-between">
+<a class="font-label-md text-label-md text-secondary hover:text-secondary-fixed flex items-center gap-1.5 transition-colors" href="https://github.com" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="code">code</span>
+                GitHub Code
+              </a>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5" onclick="toggleTerminalModal('nova')">
+<span class="material-symbols-outlined text-base" data-icon="schema">schema</span>
+                Inspect Architecture
+              </button>
+</div>
+</article>
+<!-- Project 2: Bhojanam -->
+<article class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col justify-between hover:border-tertiary/50 transition-all glow-violet group">
+<!-- Terminal Header -->
+<div class="bg-surface-container-lowest px-4 py-2.5 border-b border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container border border-error/50 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container/40 border border-tertiary/50 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-surface-variant inline-block"></span>
+<span class="ml-2 font-code-sm text-xs text-outline">~/projects/bhojanam-ai</span>
+</div>
+<span class="font-code-sm text-xs text-tertiary">Nov–Dec 2025</span>
+</div>
+<!-- Card Content -->
+<div class="p-6 space-y-5">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm bg-tertiary/10 text-tertiary border border-tertiary/30">LOCAL AI &amp; COMPUTER VISION</span>
+<span class="font-label-sm text-label-sm text-outline">ROLE: Backend Developer, Team Project</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mt-2 group-hover:text-tertiary transition-colors">
+                  Bhojanam – Offline AI Food Label Copilot
+                </h3>
+</div>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-1.5 font-code-sm text-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface border border-outline-variant/30">Python</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary border border-secondary/30">PySide6 (Qt)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary border border-primary/30">EasyOCR</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary border border-tertiary/30">Ollama (Local LLM)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline border border-outline-variant/30">Gemma</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline border border-outline-variant/30">QThread</span>
+</div>
+<!-- Highlights -->
+<ul class="space-y-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Developed an <strong>offline-first desktop app (PySide6/Qt)</strong> with 3 input modes (camera, screenshot, photo upload) scanning nutrition labels with zero cloud dependency.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Architected a <strong>2-stage OCR + local LLM pipeline</strong> (EasyOCR, Ollama/Gemma) with GPU acceleration, CPU fallback, and an 8-field structured prompt template.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base mt-0.5 flex-shrink-0" data-icon="chevron_right">chevron_right</span>
+<span>Offloaded OCR/LLM inference to a background <strong>QThread worker</strong>, guaranteeing smooth UI responsiveness with 0 cloud API invocations.</span>
+</li>
+</ul>
+<!-- Architecture Specs Block -->
+<div class="bg-surface-container-lowest p-3.5 rounded border border-outline-variant/20 font-code-sm text-xs grid grid-cols-2 gap-2 text-outline">
+<div><span class="text-on-surface-variant font-semibold">Inputs:</span> Camera / Screen / File</div>
+<div><span class="text-on-surface-variant font-semibold">Inference:</span> 100% Local (Ollama)</div>
+<div><span class="text-on-surface-variant font-semibold">Threading:</span> Async QThread</div>
+<div><span class="text-on-surface-variant font-semibold">Prompt:</span> 8-Field Structured</div>
+</div>
+</div>
+<!-- Footer Action Links -->
+<div class="p-4 bg-surface-container border-t border-outline-variant/20 flex items-center justify-between">
+<a class="font-label-md text-label-md text-tertiary hover:text-tertiary-fixed flex items-center gap-1.5 transition-colors" href="https://github.com" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="code">code</span>
+                GitHub
+              </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+                Download App
+              </a>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+<section class="space-y-8" id="experience">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">WORK LOG &amp; IMPACT</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">Professional Experience</h2>
+</div>
+<span class="font-code-sm text-xs text-outline hidden sm:inline">PROD_TRACE: 2 INTERNSHIPS</span>
+</div>
+<div class="relative border-l border-outline-variant/30 ml-4 sm:ml-8 space-y-10">
+<!-- Experience 1 -->
+<div class="relative pl-6 sm:pl-10">
+<span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-secondary border-4 border-background"></span>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:border-secondary/40 transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-outline-variant/20 pb-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">
+                    Artificial Intelligence Intern
+                  </h3>
+<span class="font-label-md text-label-md text-secondary">InAmigos Foundation</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/30 font-code-sm text-xs text-outline">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="calendar_month">calendar_month</span>
+                  Aug 2026
+                </div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 my-4 font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-tertiary border border-tertiary/30">Prompt Engineering</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Google Gemini</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">OpenAI ChatGPT</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Anthropic Claude</span>
+</div>
+<!-- Points -->
+<ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">•</span>
+<span>Crafted and refined 50+ prompts across 3 large language models (Gemini, ChatGPT, Claude) to compare outputs and identify the most accurate response pattern for each task.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">•</span>
+<span>Applied structured prompting methods – few-shot examples, chain-of-thought framing, role-based instructions – cutting iteration cycles by roughly 30% while raising output quality.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">•</span>
+<span>Compiled a reusable library of prompt templates and evaluation notes to speed up future experimentation.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Experience 2 -->
+<div class="relative pl-6 sm:pl-10">
+<span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-background"></span>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:border-primary/40 transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-outline-variant/20 pb-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">
+                    Artificial Intelligence &amp; Machine Learning Intern
+                  </h3>
+<span class="font-label-md text-label-md text-primary">Sumerix Global</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/30 font-code-sm text-xs text-outline">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="calendar_month">calendar_month</span>
+                  Sep 2026
+                </div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 my-4 font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary border border-secondary/30">Python</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Pandas</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">NumPy</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Scikit-learn</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary border border-primary/30">PyTorch</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Matplotlib</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Seaborn</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">Git/GitHub</span>
+</div>
+<!-- Points -->
+<ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span>Cleaned and preprocessed 5+ datasets (missing values, duplicates, outliers), enabling models to reach 85% accuracy.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span>Trained and evaluated 3+ machine learning models with Scikit-learn and implemented 1 deep learning model in PyTorch, comparing performance across approaches.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span>Delivered 5+ intermediate Python projects with EDA and visualizations (Pandas, Matplotlib, Seaborn), documented in Jupyter notebooks and tracked with Git on GitHub.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= EDUCATION, CERTIFICATIONS & ACHIEVEMENTS ================= -->
+<section class="space-y-8" id="certifications">
+<div class="border-b border-outline-variant/20 pb-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">ACADEMIC &amp; CREDENTIALS</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">Education &amp; Achievements</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Education Column -->
+<div class="lg:col-span-6 space-y-4">
+<h3 class="font-label-md text-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="school">school</span>
+              ACADEMIC BACKGROUND
+            </h3>
+<!-- Higher Education -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold">Galgotias University</h4>
+<p class="text-body-sm font-body-sm text-secondary font-medium">B.Tech in Computer Science &amp; Engineering (Artificial Intelligence)</p>
+<p class="text-xs font-code-sm text-outline mt-0.5">Greater Noida, Uttar Pradesh</p>
+</div>
+<div class="text-right">
+<div class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/40 font-code-sm text-xs text-secondary font-bold">
+                    CGPA: 9.37
+                  </div>
+<div class="text-[11px] font-code-sm text-outline mt-1">Exp: 2028</div>
+</div>
+</div>
+</div>
+<!-- Schooling -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold">Colonels Brightland Public School</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Agra, Uttar Pradesh</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-2.5 rounded bg-surface-container border border-outline-variant/20">
+<span class="text-xs text-outline font-label-sm block">Class XII (CBSE)</span>
+<span class="font-headline-sm font-headline-sm text-on-surface font-bold">83%</span>
+<span class="text-[10px] text-outline block">2023</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container border border-outline-variant/20">
+<span class="text-xs text-outline font-label-sm block">Class X (CBSE)</span>
+<span class="font-headline-sm font-headline-sm text-on-surface font-bold">80%</span>
+<span class="text-[10px] text-outline block">2021</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Certifications & Honors Column -->
+<div class="lg:col-span-6 space-y-4">
+<h3 class="font-label-md text-label-md text-tertiary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+              CERTIFICATIONS &amp; HONORS
+            </h3>
+<!-- Certifications List -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 space-y-3">
+<span class="font-label-sm text-label-sm text-outline block mb-2">INDUSTRY CERTIFICATIONS</span>
+<div class="flex items-center gap-3 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-secondary" data-icon="database">database</span>
+<div>
+<div class="text-body-sm font-body-sm text-on-surface font-semibold">Mastering MySQL</div>
+<div class="text-xs font-code-sm text-outline">Guvi Geek Network</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<div>
+<div class="text-body-sm font-body-sm text-on-surface font-semibold">SQL Database Certification</div>
+<div class="text-xs font-code-sm text-outline">Oracle Certified</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 rounded bg-surface-container">
+<span class="material-symbols-outlined text-tertiary" data-icon="hub">hub</span>
+<div>
+<div class="text-body-sm font-body-sm text-on-surface font-semibold">Google Development Workshop</div>
+<div class="text-xs font-code-sm text-outline">Firebase &amp; MediaPipe Architecture</div>
+</div>
+</div>
+</div>
+<!-- Achievements Callout -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 space-y-3 glow-indigo">
+<span class="font-label-sm text-label-sm text-secondary block mb-1">KEY COMPETITIVE ACHIEVEMENTS</span>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="emoji_events">emoji_events</span>
+<div>
+<h5 class="text-on-surface font-bold text-sm">AI Summit 2026 Finalist</h5>
+<p class="text-xs text-on-surface-variant font-body-sm">Ranked top team among 4,000 competing groups nationwide.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="psychology">psychology</span>
+<div>
+<h5 class="text-on-surface font-bold text-sm">330+ LeetCode Problems Solved</h5>
+<p class="text-xs text-on-surface-variant font-body-sm">Consistent problem-solving across Trees, Graphs, DP, and System Logic.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CONTACT & INTERACTIVE TERMINAL ================= -->
+<section class="space-y-6" id="contact">
+<div class="border-b border-outline-variant/20 pb-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">DISPATCH &amp; CONNECTION</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">Initiate Contact</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Terminal Interface Card -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between">
+<div class="bg-surface-container-low px-4 py-2.5 border-b border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-outline-variant inline-block"></span>
+<span class="ml-2 font-code-sm text-xs text-on-surface-variant">vebhav@arch-station:~$</span>
+</div>
+<span class="font-code-sm text-[11px] text-secondary">zsh 5.9</span>
+</div>
+<div class="p-5 font-code-sm text-xs space-y-3 text-on-surface overflow-x-auto">
+<p class="text-outline"># Quick info lookup</p>
+<p><span class="text-secondary">$</span> cat &lt;&lt; 'EOF' &gt; contact_card.json</p>
+<pre class="text-primary bg-surface-container-low/50 p-3 rounded border border-outline-variant/20 leading-relaxed font-code-sm">{
+  "engineer": "Vebhav Sharma",
+  "specialization": "Backend &amp; Machine Intelligence",
+  "email": "vebhavsharma2006@gmail.com",
+  "phone": "+91-7037627734",
+  "location": "Greater Noida, Uttar Pradesh",
+  "status": "Available for high-scale backend &amp; AI engineering roles"
+}
+              </pre>
+<p><span class="text-secondary">$</span> ping -c 1 api.vebhav.dev</p>
+<p class="text-secondary-fixed-dim">64 bytes from 104.21.48.12: icmp_seq=1 ttl=58 time=7.84 ms [OK]</p>
+</div>
+<div class="p-4 bg-surface-container-low/60 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
+<span class="font-code-sm text-xs text-outline">Ready for connection payload</span>
+<a class="px-4 py-2 rounded bg-secondary text-on-secondary font-label-md text-xs font-bold hover:bg-secondary-fixed transition-colors flex items-center gap-1.5" href="mailto:vebhavsharma2006@gmail.com">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                Send Email Protocol
+              </a>
+</div>
+</div>
+<!-- Channel Links Card -->
+<div class="lg:col-span-5 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 flex flex-col justify-between space-y-6">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Direct Channels</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                Reach out for backend system architecture, generative AI consulting, or high-impact technical roles.
+              </p>
+</div>
+<div class="space-y-3 font-label-sm text-label-sm">
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-secondary hover:text-secondary transition-all" href="mailto:vebhavsharma2006@gmail.com">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="mail">mail</span>
+                  vebhavsharma2006@gmail.com
+                </span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-secondary hover:text-secondary transition-all" href="tel:+917037627734">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="call">call</span>
+                  +91-7037627734
+                </span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-tertiary hover:text-tertiary transition-all" href="https://linkedin.com" target="_blank">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="public">public</span>
+                  LinkedIn Profile
+                </span>
+<span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container border border-outline-variant/30 hover:border-secondary hover:text-secondary transition-all" href="https://github.com" target="_blank">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="deployed_code">deployed_code</span>
+                  GitHub Repositories
+                </span>
+<span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span>
+</a>
+</div>
+<div class="pt-2">
+<span class="text-xs font-code-sm text-outline flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+                Response SLA: &lt; 12 hours via Email / Telegram
+              </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- ================= TERMINAL MODAL POPUP ================= -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" id="terminal-modal">
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl max-w-2xl w-full overflow-hidden shadow-2xl">
+<div class="bg-surface-container px-4 py-2.5 border-b border-outline-variant/20 flex items-center justify-between">
+<span class="font-code-sm text-xs text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+          ARCH_INSPECT_TERMINAL :: vebhav@arch-station
+        </span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-xs" onclick="toggleTerminalModal()">
+          [ESC / CLOSE]
+        </button>
+</div>
+<div class="p-5 font-code-sm text-xs space-y-4 max-h-[60vh] overflow-y-auto">
+<div class="text-outline"># Active runtime inspection loaded.</div>
+<div>
+<span class="text-secondary">$</span> whoami
+          <p class="text-on-surface mt-1">Vebhav Sharma — Backend Developer | Artificial Intelligence Engineer</p>
+</div>
+<div>
+<span class="text-secondary">$</span> arch --specs
+          <div class="mt-1 p-3 bg-surface-container rounded border border-outline-variant/20 text-tertiary">
+            • Primary: FastAPI, Django, PostgreSQL, MySQL<br/>
+            • AI Engines: PyTorch, Scikit-learn, Ollama (Local LLM), Groq, AssemblyAI<br/>
+            • LeetCode: 330+ solved | CGPA: 9.37 (Galgotias Univ)
+          </div>
+</div>
+<div>
+<span class="text-secondary">$</span> echo "Have a project in mind?"
+          <p class="text-secondary-fixed mt-1">"Let's build reliable distributed backends and machine intelligence."</p>
+</div>
+</div>
+<div class="bg-surface-container px-4 py-2.5 border-t border-outline-variant/20 flex justify-between items-center text-xs font-code-sm">
+<span class="text-outline">Press ESC or click button to dismiss</span>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-semibold" onclick="toggleTerminalModal()">Done</button>
+</div>
+</div>
+</div>
+<!-- ================= FOOTER (Shared Component) ================= -->
+<footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-space-lg py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-md w-full">
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<span class="font-label-md text-label-md text-primary dark:text-primary font-bold">VS // ARCHITECT</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">© 2024 Vebhav Sharma. Designed for high-concurrency and machine intelligence.</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary transition-colors duration-150" href="https://github.com" target="_blank">GitHub</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary transition-colors duration-150" href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary transition-colors duration-150" href="mailto:vebhavsharma2006@gmail.com">Email</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#projects">Architecture Notes</a>
+<a class="text-secondary dark:text-secondary text-label-sm font-label-sm hover:text-secondary-fixed transition-colors duration-150" href="#about">System Status</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+    function toggleTerminalModal(context) {
+      const modal = document.getElementById('terminal-modal');
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('terminal-modal');
+        if (!modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    });
+  </script>
+</body></html>
